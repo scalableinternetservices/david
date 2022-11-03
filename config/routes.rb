@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-  resources :articles, only: %w[index create]
   namespace :api do
-    resources :articles, only: %[index create]
-    # resources
+    resources :articles, only: %w[index create]
   end
 
-  root 'site#index'
-  # get '/*path' => 'site#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :articles, only: %w[index create]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/react' => 'site#index'
 end
